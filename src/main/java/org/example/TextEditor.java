@@ -96,9 +96,27 @@ public class TextEditor implements ActionListener {
 
         if(actionEvent.getSource()==cut){
             //perform cut operation
+            textArea.cut();
         }
         if(actionEvent.getSource()==copy){
             //perform copy operation
+            textArea.copy();
+        }
+
+        if(actionEvent.getSource()==paste){
+            //perform paste operation
+            textArea.paste();
+        }
+
+        if(actionEvent.getSource()==selectAll){
+
+            //perform Select all Operation
+            textArea.selectAll();
+        }
+
+        if(actionEvent.getSource()==close){
+            //perform close editor Operation
+            System.exit(0);
         }
     }
     public static void main(String[] args) {
