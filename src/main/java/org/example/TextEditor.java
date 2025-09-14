@@ -1,9 +1,11 @@
 package org.example;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
-public class TextEditor {
+public class TextEditor implements ActionListener {
 
     // Declaring properties of text editor
     JFrame frame;
@@ -41,6 +43,11 @@ public class TextEditor {
         openFile=new JMenuItem("OPen File");
         saveFile=new JMenuItem("Save File");
 
+        // Add action Listener to file menu items
+        newFile.addActionListener(this);
+        openFile.addActionListener(this);
+        saveFile.addActionListener(this);
+
         // add menu items to file menu
         file.add(newFile);
         file.add(openFile);
@@ -53,12 +60,20 @@ public class TextEditor {
         selectAll=new JMenuItem("Select All");
         close=new JMenuItem("Close");
 
+        // Adding action Listeners to edit menu items
+        cut.addActionListener(this);
+        copy.addActionListener(this);
+        paste.addActionListener(this);
+        selectAll.addActionListener(this);
+        close.addActionListener(this);
+
         // add items to edit menu
         edit.add(cut);
         edit.add(copy);
         edit.add(paste);
         edit.add(selectAll);
         edit.add(close);
+
 
         // add menus to menu bar
         menuBar.add(file);
@@ -74,6 +89,17 @@ public class TextEditor {
         frame.setBounds(0,0,400,400);
         frame.setVisible(true);
         frame.setLayout(null);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent){
+
+        if(actionEvent.getSource()==cut){
+            //perform cut operation
+        }
+        if(actionEvent.getSource()==copy){
+            //perform copy operation
+        }
     }
     public static void main(String[] args) {
 
