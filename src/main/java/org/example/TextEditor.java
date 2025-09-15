@@ -3,15 +3,14 @@ package org.example;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 
 
 public class TextEditor implements ActionListener {
 
     // Declaring properties of text editor
     JFrame frame;
-
     JMenuBar menuBar;
-
     JMenu file, edit;
 
     // File menu items
@@ -117,6 +116,47 @@ public class TextEditor implements ActionListener {
         if(actionEvent.getSource()==close){
             //perform close editor Operation
             System.exit(0);
+        }
+
+        if(actionEvent.getSource()==openFile){
+
+            //Open File chooser
+            JFileChooser fileChooser=new JFileChooser("users/");
+
+            int chooseOption = fileChooser.showOpenDialog(null);
+
+            // if we have choosen Open Button
+            if(chooseOption==JFileChooser.APPROVE_OPTION){
+
+                // Getting the selected file
+                File file= fileChooser.getSelectedFile();
+
+                //get path of file
+                String filePath= file.getPath();
+
+                try{
+
+                    // initialize file reader
+                    FileReader fileReader=new FileReader(filePath);
+
+                    // Initialize Buffer Reader
+                    BufferedReader bufferedReader=new BufferedReader(fileReader);
+                    String intermediate="", output="";
+
+                    // Read content line by line
+                    while((intermediate = bufferedReader.readLine())!=null){
+                        output+=intermediate+"\n";
+                    }
+
+                    // Set the output string to text area
+                    textArea.setText(output);
+
+                } catch(IOException fileNotFoundException){
+                    fileNotFoundException.printStackTrace();
+
+                }
+
+            }
         }
     }
     public static void main(String[] args) {
