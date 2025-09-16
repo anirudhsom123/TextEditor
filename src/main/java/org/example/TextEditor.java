@@ -193,11 +193,16 @@ public class TextEditor implements ActionListener {
                 }
             }
         }
+
+        // new file
+        if(actionEvent.getSource()==newFile){
+            TextEditor textEditor=new TextEditor();
+        }
     }
 
     public static void main(String[] args) {
 
-        TextEditor textEditor = new TextEditor();
+        TextEditor newTextEditor = new TextEditor();
 
     }
 }
