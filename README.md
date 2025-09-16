@@ -21,20 +21,6 @@ A simple, lightweight text editor built with Java Swing that provides essential 
   - File browser integration
   - Cross-platform compatibility
 
-## Screenshots
-
-### Main Interface
-![Text Editor Main Interface](Screenshot-2025-09-17-at-12.08.03-AM.jpeg)
-
-### File Menu Options
-![File Menu](Screenshot-2025-09-17-at-12.08.35-AM.jpeg)
-
-### File Browser Dialog
-![File Browser](Screenshot-2025-09-17-at-12.09.18-AM.jpeg)
-
-### Edit Menu Options
-![Edit Menu](Screenshot-2025-09-17-at-12.10.17-AM.jpeg)
-
 ## How to Run
 
 ### Prerequisites
